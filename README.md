@@ -10,23 +10,25 @@ Langkah-langkah hosting
 1. Bikin folder nama terserah, pada folder project. Misalnya folder aplikasi.
 2. Pindahkan semua folder dan file pada folder project kecuali folder public, ke dalam folder yang baru dibuat tadi.
 3. Pindahkan semua folder dan file pada folder public, ke luar folder public. Dan hapus folder publicnya.
-4. Buka file index.php. Ubah pada bagian :
-      require __DIR__ . '/../vendor/autoload.php';             =>  require __DIR__ . '/aplikasi/vendor/autoload.php';
-      $app = require_once __DIR__ . '/../bootstrap/app.php';   =>  $app = require_once __DIR__ . '/aplikasi/bootstrap/app.php';
+4. Buka file index.php. Ubah pada bagian :<br/>
+&ensp;&ensp;<code>require __DIR__ . '/../vendor/autoload.php';</code>&ensp;=>&ensp;<code>require __DIR__ . '/aplikasi/vendor/autoload.php';</code><br/>
+&ensp;&ensp;<code>$app = require_once __DIR__ . '/../bootstrap/app.php';</code>&ensp;=>&ensp;<code>$app = require_once __DIR__ . '/aplikasi/bootstrap/app.php';</code><br/>
 
-      Tambahkan kode ini, dibawah baris variable $app diatas :
-         $app->bind('path.public', function () {
-            return __DIR__;
-         });
-   catatan: penamaan folder aplikasi sesuaikan dengan nama folder yang dibuat.
+&ensp;&ensp;Tambahkan kode ini, dibawah baris variable $app diatas :<br/>
+&ensp;&ensp;&ensp;<code>$app->bind('path.public', function () {</code><br/>
+&ensp;&ensp;&ensp;<code>&ensp;&ensp;return \_\_DIR\_\_;</code><br/>
+&ensp;&ensp;&ensp;<code>});</code><br/>
+catatan: penamaan folder aplikasi sesuaikan dengan nama folder yang dibuat.
 
 ==== Pengaturan database ====
 1. Buat database baru, pada menu websites di bagian submenu databases -> management.
 2. Buka phpmyadmin sesuai database yang dibuat.
 3. Import file sql.
-4. Ubah file .env, pada bagian :
-      DB_DATABASE=db_aplikasi
-      DB_USERNAME=username_db
-      DB_PASSWORD=pass_db
-   catatan: sesuaikan dengan nama db, username dan password yang dibuat tadi.
-6. 
+4. Ubah file .env, pada bagian :<br/>
+&ensp;&ensp;<code>DB_DATABASE=db_aplikasi</code><br/>
+&ensp;&ensp;<code>DB_USERNAME=username_db</code><br/>
+&ensp;&ensp;<code>DB_PASSWORD=pass_db</code><br/>
+catatan: sesuaikan dengan nama db, username dan password yang dibuat tadi.
+
+* Contoh struktur folder lihat susunan pada repository ini.
+* Referensi: https://www.rumahweb.com/journal/cara-upload-laravel-ke-hosting-cpanel/
