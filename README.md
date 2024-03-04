@@ -11,8 +11,8 @@ Langkah-langkah hosting
 2. Pindahkan semua folder dan file pada folder project kecuali folder public, ke dalam folder yang baru dibuat tadi.
 3. Pindahkan semua folder dan file pada folder public, ke luar folder public. Dan hapus folder publicnya.
 4. Buka file index.php. Ubah pada bagian :<br/>
-&ensp;&ensp;<code>require __DIR__ . '/../vendor/autoload.php';</code>&ensp;=>&ensp;<code>require __DIR__ . '/aplikasi/vendor/autoload.php';</code><br/>
-&ensp;&ensp;<code>$app = require_once __DIR__ . '/../bootstrap/app.php';</code>&ensp;=>&ensp;<code>$app = require_once __DIR__ . '/aplikasi/bootstrap/app.php';</code><br/>
+&ensp;&ensp;<code>require \_\_DIR\_\_ . '/../vendor/autoload.php';</code>&ensp;=>&ensp;<code>require \_\_DIR\_\_ . '/aplikasi/vendor/autoload.php';</code><br/>
+&ensp;&ensp;<code>$app = require_once \_\_DIR\_\_ . '/../bootstrap/app.php';</code>&ensp;=>&ensp;<code>$app = require_once \_\_DIR\_\_ . '/aplikasi/bootstrap/app.php';</code><br/>
 
 &ensp;&ensp;Tambahkan kode ini, dibawah baris variable $app diatas :<br/>
 &ensp;&ensp;&ensp;<code>$app->bind('path.public', function () {</code><br/>
